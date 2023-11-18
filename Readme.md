@@ -2,8 +2,9 @@
 
 Let's start! 💪🏻
 
+Install geth:
 ```
-Insatll geth - brew install ethereum
+brew install ethereum
 ```
 
 Create a pwd.txt with 123456 string
@@ -14,7 +15,7 @@ geth --datadir nodo2 account new --password ./pwd.txt
 geth --datadir nodo3 account new --password ./pwd.txt
 ```
 
-(Creation of Genesis file "genesis.json" with copy/paste not from puppeth (deprecated))
+Now create Genesis file "genesis.json" with copy/paste from here With your Wallets (not from puppeth, is deprecated)
 
 ```
 bootnode --genkey=boot.key
@@ -29,7 +30,7 @@ geth --datadir nodo3 init genesis.json
 
 (set en each genesis also in extra data each account if not work due to sealing error)
 
-Now we setting each node with these configurations (set each enode direction with the result of bootnode comand)
+Now we setting each node with these configurations (set each enode direction with the result of bootnode command, also the Wallet Addresses)
 
 ```
 geth --authrpc.port 9552 --ipcpath "\.\pipe\nodo1" --datadir nodo1 --syncmode full --http --http.api admin,eth,miner,net,txpool,personal \
